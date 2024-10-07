@@ -1,0 +1,39 @@
+struct Book {
+    title: String,
+    author: String,
+    pages: u32,
+    is_hardcover: bool,
+}
+
+fn main() {
+
+    let range = Book {
+        title: String::from("Range"),
+        author: String::from("David Epstein"),
+        pages: 309,
+        is_hardcover: false,
+        
+    };
+    
+    let lee = Book {
+        title: String::from("From Third World To First. Singapore And The Asian Economic Boom"),
+        author: String::from("Lee Kuan Yew"),
+        pages: 697,
+        is_hardcover: false,
+    };
+    
+    let hardcover_statement1 = if range.is_hardcover {
+        "is"
+    } else {
+        "is not"
+    };
+    
+    let hardcover_statement2 = if lee.is_hardcover {
+        "is"
+    } else {
+        "is not"
+    };
+    
+    println!("The book, {} is written by {}. It has {} pages. The book {} in hardcover", range.title, range.author, range.pages, hardcover_statement1);
+    println!("The book, {} is written by {}. It has {} pages and the book {} in hardcover", lee.title, lee.author, lee.pages, hardcover_statement2);
+}
